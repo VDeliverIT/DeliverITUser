@@ -1,0 +1,26 @@
+﻿@model UserContext.ClientToken
+
+@{
+    ViewData["Title"] = "Logout";
+}
+
+@if (Model.UserName == "")
+{
+    <h2>Hello Guest!</h2><br />
+    <span>You are not logged in to logout!</span>
+}
+else
+{
+    <form asp-action="LogoutUser">
+        <div class="form-horizontal">
+            <h4>User Logout</h4>
+            <h2>Hi @Model.UserName!</h2><br/>
+            <span>Are you sure you want to logout?</span>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Logout" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+}

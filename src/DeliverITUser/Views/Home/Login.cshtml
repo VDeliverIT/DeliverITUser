@@ -1,0 +1,33 @@
+﻿@model UserContext.ClientToken
+    
+@{
+    ViewData["Title"] = "Login";
+}
+
+@if (Model.UserName!="")
+{
+    <h2>Hello @Model.UserName!</h2><br />
+    <span>You are already logged in!!</span>
+}
+else
+{
+    <form asp-action="Login">
+    <div class="form-horizontal">
+        <h4>User Login</h4>
+        <hr />
+        <div asp-validation-summary="None" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="UserName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UserName" class="form-control" />
+            </div>
+        </div>
+      
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Log me in" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+}

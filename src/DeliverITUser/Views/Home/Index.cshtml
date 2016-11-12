@@ -1,0 +1,21 @@
+﻿@model UserContext.ClientToken
+    
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <h4>Login Status</h4>
+       @if (Model.UserName == "")
+       {
+           <h2>Hello Guest!</h2> <br/>
+           <span>You are not logged in yet.</span>
+       }
+       else
+       {
+           <h2>Hello @Model.UserName!</h2><br/>
+           <span>You are logged in.</span>
+       }
+    </div>
+</div>
